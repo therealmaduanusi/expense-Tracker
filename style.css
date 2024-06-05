@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bgcolor: hsl(27, 66%, 92%);
+    --header-bgcolor: hsl(10, 79%, 65%);
+    --chart-bgcolor: hsl(33, 100%, 98%);
+    --darkBrown: hsl(25, 47%, 15%);
+    --verypaleorange: hsl(33, 100%, 98%);
+    --cyan: hsl(186, 34%, 60%);
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background-color: var(--bgcolor);
+    margin: 0 10px;
+}
+
+#main {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    margin: 0 10px;
+}
+
+.container {
+    display: grid;
+    row-gap: 1rem;
+}
+
+.container .header {
+    background-color: var(--header-bgcolor);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--chart-bgcolor);
+}
+.container .header .expenses-balance {
+    align-self: flex-end;
+    display: flex;
+    row-gap: 0.4rem;
+    flex-direction: column;
+}
+.container .header .expenses-balance h4 {
+    font-size: 0.76rem;
+    font-weight: 400;
+    justify-self: flex-end;
+}
+/* .container .header .expense-logo {
+    align-items: center;
+} */
+
+.chart {
+    color: var(--darkBrown);
+}
+.chart h2 {
+    margin-bottom: 2rem;
+}
+
+
+.container .chart {
+    background-color: var(--chart-bgcolor);
+    border-radius: 10px;
+    padding: 1.5rem 1.8rem;
+}
+
+.expenses {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+    align-items: end;
+    text-align: center;
+    border-bottom: 0.4px solid hsla(25, 47%, 15%, 0.305);
+    margin: 1rem 0;
+    padding: 1.5rem 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    position: relative;
+}
+
+.expenses .days {
+    background-color: var(--header-bgcolor);
+    border-radius: 4px;
+    width: 2rem;
+}
+
+.expenses .days-blue {
+    background-color: var(--cyan);
+    border-radius: 4px;
+    width: 2rem;
+}
+.numberOfDays {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.expenses .day1 .mon {
+    height: 30px;
+}
+.expenses .day2 .tue {
+    height: 60px;
+}
+.expenses .day3 .wed {
+    height: 100px;
+}
+.expenses .day4 .thus {
+    height: 60px;
+}
+.expenses .day5 .fri {
+    height: 40px;
+}
+.expenses .day6 .sat {
+    height: 70px;
+}
+.expenses .day7 .sun {
+    height: 55px;
+}
+.amounts {
+    background-color: var(--darkBrown);
+    color: var(--verypaleorange);
+    padding: 0.3rem;
+    border-radius: 6px;
+    font-size: 0.67rem;
+    display: none;
+}
+.expenses .days:hover,
+.expenses .days-blue:hover {
+    opacity: 0.7;
+    /* display: block; */
+}
+.numberOfDays:hover .amounts {
+    display: block;
+}
+
+.day1 .amounts {
+    position: absolute;
+    top: 30%;
+}
+.day2 .amounts {
+    position: absolute;
+    top: 10%;
+}
+.day3 .amounts {
+    position: absolute;
+    top: -12%;
+}
+.day4 .amounts {
+    position: absolute;
+    top: 10%;
+}
+.day5 .amounts {
+    position: absolute;
+    top: 25%;
+}
+.day6 .amounts {
+    position: absolute;
+    top: 5%;
+}
+.day7 .amounts {
+    position: absolute;
+    top: 15%;
+}
+
+
+
+.epenses-per-month {
+    display: flex;
+    justify-content: space-between;
+}
+
+.epenses-per-month .total-this-month h4 {
+    margin-bottom: 5px;
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.7;
+}
+.epenses-per-month .total-this-month h3 {
+    /* font-size: 0.5rem; */
+    font-weight: 700;
+}
+
+.epenses-per-month .precentage-last-month h4 {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.epenses-per-month .precentage-last-month {
+    text-align: right;
+}
+.epenses-per-month .precentage-last-month p {
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+@media (max-width: 365px) {
+    .chart h2 {
+        font-size: 1.3rem;
+    }
+    .expenses {
+        column-gap: 5px;
+    }
+}
